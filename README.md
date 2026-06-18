@@ -1,4 +1,4 @@
-# Project designed to integrate omenland terrain with DUCKDB-WASM 
+# Integrate omenland terrain with DUCKDB-WASM 
 ## Getting Started
 
 First, run the development server:
