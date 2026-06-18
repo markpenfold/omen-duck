@@ -1,5 +1,5 @@
-# Integrate omenland terrain with DUCKDB-WASM 
-## Getting Started
+## Integrate omenland terrain with DUCKDB-WASM 
+### Getting Started
 
 First, run the development server:
 
