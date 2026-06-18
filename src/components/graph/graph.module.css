@@ -1,0 +1,257 @@
+.eventHeader{
+    background-color: #343434;
+    padding: 4px;
+}
+
+.graphEventHolder {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid rgb(24, 24, 24);
+}
+
+.icontext {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.buttonz {
+  margin-left: auto; /* 🚀 pushes it to the right */
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;      /* space between buttons */
+  flex-shrink: 0;  
+}
+
+.buttonz button {
+    cursor: pointer;
+}
+.clicker {
+  cursor: pointer;
+  display: inline-flex;        /* make button a flex container */
+  align-items: center;         /* vertical align text + icon */
+  gap: 4px;                    /* spacing between text and + icon */
+  background: none;            /* optional: remove default button bg */
+  border: none;                /* optional: remove default button border */
+  padding: 4px 8px;            /* optional padding */
+  font-size: 8px;              /* matches your .headerRow text size */
+}
+
+.linkAddTab {
+  display: inline-flex;         /* aligns children horizontally */
+  align-items: center;          /* vertically centers children */
+  gap: 6px;                    /* space between text and plus icon */
+  cursor: pointer;             /* indicates clickable */
+  color: #a7a7a7;
+  padding: 4px;              /* horizontal padding inside */
+  padding-top: 2px;
+  padding-right: 12px;
+  margin-left:4px;
+  user-select: none;           /* optional: prevents text selection on click */
+
+  background-color: rgb(42,42,42);
+}
+
+.expanded {
+    background-color:rgb(28,57,142);
+    border-top-left-radius: 6px;
+}
+.expanded span {
+    color:ivory;
+}
+
+.eventrow {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px;
+  flex: 1;
+  min-width: 0;
+  color: #a7a7a7;
+}
+
+.eventrow span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 80%;
+}
+
+.listHolder {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    background-color: #1b1b1b;
+
+
+}
+
+.linkrow {
+    padding-left:4px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    flex: 0 0 100%;
+    display:flex;
+    color: #a7a7a7;
+}
+
+.addLinkText {
+    font-size: 7pt;
+    color: #a7a7a7;
+    padding-left: 3px;
+}
+
+.nodeListText{
+    font-size: 7pt;
+    color: #a7a7a7;
+    padding-left: 3px;
+}
+
+.linkList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #161616;
+    padding-bottom: 0px;
+}
+
+.linkListItem {
+    display: flex;
+    align-items: center;
+    padding: 2px 0 2px 0px;
+    gap: 6px;
+    margin-left:0px;
+}
+
+
+.AddLinkListHeader{
+    display: flex;
+    align-items: center;
+    padding: 4px 0 4px 4px;
+    gap: 6px;
+    margin-left:0px;
+    border-bottom: 1px solid #1b1b1b;
+    font-size: 8pt;
+    color: #aca9a9;
+    background-color: rgba(28,57,142);
+    
+}
+
+.linkText {
+    font-size: 7pt;
+    color: #818181;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+    min-width: 0;
+}
+
+
+.eventFooter {
+    height:20px;
+    width: 100%;
+    margin-left: -4px;
+}
+
+
+
+
+.selectTrigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem;
+  padding: 2px 3px;
+  border-radius: 1px;
+  border: none;
+  font-size: 10px;
+  cursor: pointer;
+  min-width: 95px;
+  background-color: #1d1d1d;
+  color: #a7a7a7;
+  margin-left: 4px;
+}
+
+.selectIcon {
+  display: flex;
+  align-items: center;
+}
+
+/* DROPDOWN */
+.selectContent {
+  background: white;
+  border-radius: 1px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 4px;
+}
+
+.selectItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+  border-radius: 1px;
+  font-size: 10px;
+  color: #121212;
+  cursor: pointer;
+}
+
+.selectItem:hover {
+  background-color: #f3f4f6;
+}
+
+.selectItem[data-state="checked"] {
+  font-weight: 500;
+}
+
+.selectItemIndicator {
+  display: flex;
+  align-items: center;
+}
+
+/* GraphView styles */
+.graphContainer {
+  width: 100%;
+  height: 100%;
+  background: #1a1a1a;
+  position: relative;
+}
+
+.refocusButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 20;
+  background: #333;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 6px 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #ccc;
+  font-size: 12px;
+}
+
+.webglError {
+  width: 100%;
+  height: 100%;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+}
+
+.webglErrorContent {
+  text-align: center;
+  padding: 20px;
+}
+
+.webglErrorSubtext {
+  font-size: 10px;
+  margin-top: 8px;
+}
