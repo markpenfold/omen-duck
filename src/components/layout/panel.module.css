@@ -1,0 +1,290 @@
+/* Mobile-first: everything stacked */
+
+.pageContainer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    /* Terrain+nav === BuilderPanel === Graph Panel -- graph editor --- FooterPanel */
+    grid-template-rows: minmax(100px, 300px) minmax(200px, auto) auto auto auto;
+    min-height: 100vh;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.timelineGraphModelSubGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(200px, 300px) auto;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.timelineGraphGrid {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.graphEditorGrid {
+    grid-column: 1;
+    grid-row: 2;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.leftPositionHistoriesGrid {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.RightPositionSubGrid {
+    grid-column: 1;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.terrainGrid {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.timeNavGrid {
+    grid-column: 1;
+    grid-row: 2;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.timelineBuilderGrid {
+    grid-column: 1;
+    grid-row: 3;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.footerGrid {
+    grid-column: 1;
+    grid-row: -1;
+}
+.lastFooter {
+    grid-column: 1;
+    display: flex;
+    justify-content: center; /* horizontal centering */
+    align-items: flex-end;   /* push text to bottom */
+    font-size: 12px;
+    color:rgb(221,221,221);
+    }
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+    
+}
+
+
+.panelContent {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.holder {
+    height: 100%;
+    background-color: forestgreen;
+}
+
+.tabButton {
+    font-size: 8pt;
+    transition: background-color 0.2s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    margin-top: -8px;
+    margin-bottom: -8px;
+}
+
+.tabButtonHolder {
+    display: flex;
+    margin-right: -8px;
+}
+
+.tabButton:hover {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Fullscreen overlay for terrain+time panel */
+.terrainFullscreenOverlay {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 9999 !important;
+  grid-column: unset !important;
+  grid-row: unset !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: #0a0a14;
+}
+
+
+/* Desktop: side-by-side layout */
+@media (min-width: 768px) {
+    
+    .pageContainer {
+    /* grid-template-columns: repeat(3, 1fr);
+       grid-template-rows: repeat(4, 1fr); */
+        grid-template-columns: 280px 1fr;
+        grid-template-rows: minmax(250px, 650px) 1fr minmax(200px, 500px) auto;
+    }
+
+    .leftPositionHistoriesGrid {
+        grid-column: 1;
+        grid-row: 1;
+        min-height: 0;
+    }
+
+    .RightPositionSubGrid {
+        display: grid;
+        grid-column: 2 / span 1;         /* was 2 / span 2 */
+        grid-row: 1 / span 1;
+        grid-template-columns: 1fr;       /* terrain takes full width of right col */
+        grid-template-rows: 2fr auto;
+        border-left: 2px solid var(--panel-border-color);
+        min-height: 0;
+    }
+
+    .terrainGrid {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+    }
+
+    .timeNavGrid {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+    }
+
+    .timelineBuilderGrid {
+        grid-column: 1 / span 2;          /* was 1 / span 3 */
+        grid-row: 2;
+        min-height: 0;
+    }
+
+    .timelineGraphModelSubGrid {
+        display: grid;
+        grid-column: 1 / span 2;          /* was 1 / span 3 */
+        grid-row: 3;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        border-top: 2px solid var(--panel-border-color);
+
+    }
+
+    .timelineGraphGrid{
+        grid-column: 1 /span 1;
+        grid-row: 1;
+        min-width: 0;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .graphEditorGrid{
+        grid-column: 2/span 1;
+        grid-row: 1;
+        min-width: 0;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+
+    .footerGrid {
+        display: grid;
+        grid-column: 1 / span 2;          /* was 1 / span 3 */
+        grid-row: -1;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr auto;
+        border-top: 2px solid var(--panel-border-color);
+        height: auto;
+    }
+
+    .lastFooter {
+        grid-column: 1/span 4;
+        grid-row: 2;
+        display: flex;
+        justify-content: center; /* horizontal centering */
+        align-items: flex-end;   /* push text to bottom */
+    }
+}
+
+
+@media (min-width: 1024px) {
+  .topRow {
+    grid-template-columns: 1fr 0.5fr; /* Desktop: 50/50 split */
+  }
+}
+
+
+/* Desktop breakpoint */
+@media (min-width: 1023px) {
+ 
+}
+
+
+.mbar_text{
+    font-size: 8pt;
+    transition: background-color 0.2s;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items:center;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.mbar_header {
+    background-color: rgb(28, 57, 142);
+}
+
+.mbar_icon{
+    margin:4px;
+    margin-top: 6px;
+}
+
+.mbar_border_events {
+    border-bottom: 4px solid rgb(105, 119, 221);
+}
+
+.mbar_border_terrain {
+    border-bottom: 4px solid rgb(136, 105, 221);
+}
+.mbar_border_time {
+    border-bottom: 4px solid rgb(105, 119, 221);
+}
+
+.mbar_border_timeline {
+    border-bottom: 4px solid rgb(221, 132, 105);
+}
+.mbar_border_fallback {
+    border-bottom: none;
+}
+
+.mbar_icon_bg {
+    background-color: #dd8469;
+}

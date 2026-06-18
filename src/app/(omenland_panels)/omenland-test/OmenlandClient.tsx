@@ -1,17 +1,16 @@
 // app/(omenland_panels)/omenland-test/OmenlandClient.tsx
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
-import { useEventStore } from '../../store/useEventStore'
+import { useEventStore } from '../../../../store/useEventStore';
 import { SimpleHUD } from '@/components/terrain2/CollHud';
-import { User } from '@/lib/db/schema';
 import LayoutPanel from '@/components/layout/LayoutPanel';
 import { Maximize2, Minimize2, Mountain, Pyramid, SquareChartGantt, Library, Search, Save, Import, Trash2 } from 'lucide-react';
-import { SavedState } from '../../store/types';
+import { SavedState } from '../../../../store/types';
 import classes from '../../../components/layout/panel.module.css';
 import DensityGraph from '@/components/terrain2/DensityGraph';
 import { TerrainPanel } from '@/components/terrain2/TerrainPanel';
-import TabbedEventsPanel from '@/components/Timeline/TabbedEventsPanel';
-import TimelineBuilder from '@/components/Timeline/TimelineBuilder';
+import TabbedEventsPanel from '@/Timeline/TabbedEventsPanel';
+import TimelineBuilder from '@/Timeline/TimelineBuilder';
 import GraphModel from '@/components/graph/GraphModel';
 import Footer from '@/components/layout/footer';
 
