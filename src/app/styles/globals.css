@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+:root {
+  --background: rgb(245,245,245);
+  --foreground: rgb(30,30,30);
+  --red:rgb(162, 5, 5);
+  --green:rgb(27, 99, 116);
+  --blue:rgb(65,105,225);
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html, body {
+  background: var(--background);
+  color: var(--foreground);
+  /* This makes Geist Sans the default font for everything */
+  font-family: var(--font-geist-sans), sans-serif;
+  
+  /* Optional: Ensures smooth text rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code, pre, .mono-text {
+  /* Automatically maps mono elements to Geist Mono */
+  font-family: var(--font-geist-mono), monospace;
+}

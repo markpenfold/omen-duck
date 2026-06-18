@@ -1,0 +1,319 @@
+/* =========================================================
+   CORE CONTAINER LAYOUTS & HEADERS
+   ========================================================= */
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;     
+  justify-content: flex-start; 
+  width: 100%;
+  min-height: 80vh; 
+  box-sizing: border-box;
+  padding-left: 24px;
+  text-align: left;
+}
+
+.centerPageHeader {
+  width: 100%;               /* 1. Spans the complete horizontal width */
+  max-width: 1200px;         /* Optional: Matches your max-width boundaries */
+  margin: 0 auto;            /* 2. Centers the header block container itself */
+  padding: 12px;
+  text-align: center;        /* 3. Centers regular inline/text elements */
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;    /* Stack elements (like a title and a subtitle) vertically */
+  justify-content: center;   /* 4. Centers flex items horizontally */
+  align-items: center;       /* 5. Centers flex items vertically */
+}
+
+.leftPageHeader {
+  width: 100%;               
+  max-width: 1200px;         
+  text-align: left;          
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.bigHeader {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin: 0;
+  color: var(--foreground);
+}
+
+.lightHeaded {
+  font-size: 2.5rem;
+  font-weight: 200;
+  letter-spacing: -0.025em;
+  margin: 0;
+  color: var(--foreground);
+}
+
+.redText {
+   color: var(--red);
+}
+
+.pageSection {
+  width: 100%;
+  min-height: 100px;
+  padding: 8px;
+}
+
+/* =========================================================
+   SITE NAVIGATION STYLES
+   ========================================================= */
+
+.navBarID {
+  display: flex;
+  align-items: center;       
+  gap: 12px;
+}
+
+.leftLinks {
+  display: flex;
+  align-items: center;
+}
+
+.lnk_holder {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  width: 100%;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+  background-color: var(--background);
+}
+
+.lnk {
+  padding: 4px;
+  color: rgb(17, 225, 114);
+  font-size: 8pt;
+}
+
+.lnk:hover {
+  color: rgb(228, 13, 13);
+}
+
+.brandLink {
+  color: #166534;
+  text-decoration: none;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.brandLink:hover {
+  opacity: 1;
+}
+
+/* =========================================================
+   AUTHENTICATION FORMS
+   ========================================================= */
+
+.fbox {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  padding-top: 80px; 
+  width: 100%;
+  min-height: 80vh; 
+  box-sizing: border-box;
+}
+
+.authForm {
+  display: grid;
+  grid-template-columns: max-content 1fr; 
+  gap: 16px 12px; 
+  width: 100%;
+  max-width: 400px;
+  align-items: center; 
+}
+
+.authForm h2,
+.authForm p,
+.authForm button {
+  grid-column: span 2;
+}
+
+.authForm input {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.authForm button {
+  justify-self: start; 
+  padding: 6px 16px;
+  cursor: pointer;
+}
+
+.formHolder {
+  padding: 4px;
+}
+
+.checklist {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: -4px; 
+  padding-left: 4px;
+  font-size: 12px;
+}
+
+.invalid {
+  color: #d93838;
+  transition: color 0.2s ease;
+}
+
+/* =========================================================
+   PRICING & TIERS GRID
+   ========================================================= */
+
+.priceContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+  padding: 12px;
+}
+
+.priceBox {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  justify-content: flex-start; 
+  max-width: 150px;
+  min-height: 250px;
+  height: auto;
+  text-align: center;     
+  background-color: var(--background);
+  padding: 4px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  gap: 16px;              
+  margin: 4px;
+}
+
+.current_tag {
+  margin-top: -55px;
+  background-color: var(--foreground);
+  color: var(--background);
+  padding: 4px;
+  min-width: 150px;
+}
+
+.buttonClass {
+  margin-top: auto;
+  background-color: rgb(30, 30, 30);
+  color: var(--background);
+  padding: 8px;
+}
+
+.buttonClass:hover {
+  color: rgb(30, 30, 30);
+  background-color: var(--background);
+}
+
+/* =========================================================
+   UTILITIES, RESPONSIVE COLUMNS, & BANNERS
+   ========================================================= */
+
+.container2Cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  padding: 12px;
+}
+
+.container3Cols {
+  display: grid;
+  grid-template-columns: auto auto 1fr; 
+  grid-auto-rows: minmax(55px, auto);
+  gap: 20px;
+  padding: 12px;
+}
+
+.warning_banner {
+  background-color: #f0fdf4;
+  border-bottom: 1px solid #bbf7d0;
+  color: #166534;
+  padding: 12px 24px;
+  width: 100%;
+  text-align: center;
+}
+
+.signInOutButton {
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: var(--foreground);
+  color: var(--background);
+  border: none;
+  border-radius: 3px;
+  text-decoration: none;
+  padding: 8px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.signInOutButton:hover {
+  background-color: #035503;
+}
+
+.errorText {
+  color: #e11d48;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 16px;
+  max-width: 240px;
+  text-align: center;
+}
+
+.user_name {
+  color: rgb(17, 225, 114);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.dashBox {
+  padding: 4px;
+}
+
+.accBox {
+  padding: 4px;
+  color: rgb(32, 145, 100);
+}
+
+.gapBig {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  color: red;
+}
+
+.bgRed {
+  background-color: rgb(225, 120, 120);
+  border: none;
+  padding: 4px;
+  color: ivory;
+}
+
+.p4 { padding: 4px; }
+.mr4 { margin-right: 4px; }
+.ml4 { margin-left: 4px; }
+
+
+.data_row {
+  padding:24px;
+}
